@@ -1,10 +1,10 @@
 # Harness Continuous Verification Example Application
 Thanks for checking out the Harness Continuous Verification Sample Application. This application
-is designed to be run in conjunction with a Promethesus Health Source with Harness. 
+is designed to be run in conjunction with a Prometheus Health Source with Harness. 
 
 ## What The Example Application Does
 
-* Generates Metrics to a Promethesus Exporter
+* Generates Metrics to a Prometheus Exporter
 * Has a 'stable' and 'unstable' version. Can be triggered via a Docker Tag e.g during a deployment
 or on-the-fly via the REST endpoints. 
 
