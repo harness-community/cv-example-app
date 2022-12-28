@@ -17,8 +17,8 @@ public class CvExampleApp {
 		SpringApplication.run(CvExampleApp.class, args);
 		
 		//Start Stable
-		GenerateStableMetrics gm = new GenerateStableMetrics();
-		gm.generateAll();
+		GenerateStableMetrics gsm = new GenerateStableMetrics();
+		gsm.generateAll();
 
 	}
 
