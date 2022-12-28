@@ -4,7 +4,7 @@ is designed to be run in conjunction with a Prometheus Health Source with Harnes
 
 ## What The Example Application Does
 
-* Generates Metrics to a Prometheus Exporter
+* Generates Metrics to default Micrometer [Spring Boot] Prometheus Registry.
 * Has a 'stable' and 'unstable' version. Can be triggered via a Docker Tag e.g during a deployment
 or on-the-fly via the REST endpoints. 
 
@@ -15,13 +15,14 @@ Can modify this application to test out your needs. A few items that are needed.
 * OpenJDK 19 - `brew install openjdk`
 * Maven 3 - `brew install maven`
 
-Local run:
+### Running Locally
 
 ```
 mvn spring-boot:run
 ```
 
-Execute:
+Can toggle explore the endpoints:
+
 * `localhost:8082`
 * `localhost:8082/actuator`
 * `localhost:8082/actuator/prometheus`
@@ -30,7 +31,10 @@ Execute:
 
 ## Docker Build
 Can have two tags, for stable and unstable. Can change the entry point [comment/un-comment] which
-first metric to use -> https://github.com/harness-apps/cv-example-app/blob/main/src/main/java/io/harness/cv/example/app/CvExampleApp.java
+first metric to use -> `main/src/main/java/io/harness/cv/example/app/CvExampleApp.java` and re-build and re-push
+to a Docker Registry of your choice. 
+
+* Docker Install - `brew install docker`
 
 ```
 docker build --platform linux/amd64 -t rlachhman/cv-example-app:stable .
@@ -39,3 +43,6 @@ docker push rlachhman/cv-example-app:stable
 docker build --platform linux/amd64 -t rlachhman/cv-example-app:unstable .
 docker push rlachhman/cv-example-app:unstable  
 ```
+
+## Deploying to Harness
+Can leverage the `harness-cv-example-deployment.yaml` and `values.yaml` to deploy to pick in Harness to pick the specific `stable` or `unstable` take. 
