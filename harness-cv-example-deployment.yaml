@@ -1,4 +1,4 @@
-# deployment
+# Deployment manifest for Harness
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: harness-cv-prom-example
-          image: rlachhman/cv-sample-app:stable
+          image: {{.Values.image}}
           imagePullPolicy: Always
           command:
             - "java -jar /app/cv-example-app-1.0.0.jar"
