@@ -45,4 +45,4 @@ docker push rlachhman/cv-example-app:unstable
 ```
 
 ## Deploying to Harness
-Can leverage the `harness-cv-example-deployment.yaml` and `values.yaml` to deploy to pick in Harness to pick the specific `stable` or `unstable` take. 
+Can leverage the `harness-cv-example-deployment.yaml` and `values.yaml` to deploy to pick in Harness to pick the specific `stable` or `unstable` tag. 
