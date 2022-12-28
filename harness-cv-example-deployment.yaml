@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: harness-cv-prom-example
-          image: rlachhman/promsample:stable
+          image: rlachhman/cv-sample-app:stable
           imagePullPolicy: Always
           command:
             - "java -jar /app/cv-example-app-1.0.0.jar"
