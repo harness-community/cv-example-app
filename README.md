@@ -21,4 +21,7 @@ mvn spring-boot:run
 ```
 
 Execute:
-`localhost:8082`
+* `localhost:8082`
+* `localhost:8082/actuator`
+* `localhost:8082/actuator/prometheus`
+* `localhost:8082/run-unstable`
