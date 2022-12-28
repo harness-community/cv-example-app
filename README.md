@@ -5,7 +5,8 @@ is designed to be run in conjunction with a Promethesus Health Source with Harne
 ## What The Example Application Does
 
 * Generates Metrics to a Promethesus Exporter
-* Has a 'stable' and 'unstable' version. 
+* Has a 'stable' and 'unstable' version. Can be triggered via a Docker Tag e.g during a deployment
+or on-the-fly via the REST endpoints. 
 
 
 ## Modifying Application
