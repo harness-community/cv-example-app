@@ -25,3 +25,14 @@ Execute:
 * `localhost:8082/actuator`
 * `localhost:8082/actuator/prometheus`
 * `localhost:8082/run-unstable`
+
+## Docker Build
+Can have two tags, for stable and unstable. 
+
+```
+docker build --platform linux/amd64 -t rlachhman/cv-example-app:stable .
+docker push rlachhman/cv-example-app:stable  
+
+docker build --platform linux/amd64 -t rlachhman/cv-example-app:unstable .
+docker push rlachhman/cv-example-app:unstable  
+```
