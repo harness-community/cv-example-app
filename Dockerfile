@@ -6,7 +6,7 @@ WORKDIR /app
 RUN ./mvnw compile
 
 COPY src /app/src
-RUN ./mvnw install
+RUN ./mvnw install -DskipTests
 
 FROM openjdk:19
 COPY --from=builder /app/target/cv-example-app-1.0.0.jar /app/cv-example-app-1.0.0.jar
