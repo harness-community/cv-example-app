@@ -28,7 +28,8 @@ Execute:
 * `localhost:8082/run-stable`
 
 ## Docker Build
-Can have two tags, for stable and unstable. 
+Can have two tags, for stable and unstable. Can change the entry point [comment/un-comment] which
+first metric to use -> https://github.com/harness-apps/cv-example-app/blob/main/src/main/java/io/harness/cv/example/app/CvExampleApp.java
 
 ```
 docker build --platform linux/amd64 -t rlachhman/cv-example-app:stable .
