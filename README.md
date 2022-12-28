@@ -25,6 +25,7 @@ Execute:
 * `localhost:8082/actuator`
 * `localhost:8082/actuator/prometheus`
 * `localhost:8082/run-unstable`
+* `localhost:8082/run-stable`
 
 ## Docker Build
 Can have two tags, for stable and unstable. 
