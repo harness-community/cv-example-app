@@ -70,8 +70,8 @@ Then browse to node_public_ip:nodeport.
 ## Metrics
 There are two metrics that can be modified. 
 
-* `CV_Counter_Example_total`
-* `CV_Gauge_Example{}`
+* CV_Counter_Example_total
+* CV_Gauge_Example{}
 
 In the `stable` version these are flat. In the `un-stable` versions these metrics increment up every 15 seconds. Can modify 
 `src/main/java/io/harness/cv/example/app/GenerateUnstableMetrics.java` and change the amount, time, or add another Actuator Metric
