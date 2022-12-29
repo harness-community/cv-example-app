@@ -14,6 +14,8 @@ spec:
         app: harness-cv-prom-example
       annotations:
         prometheus.io/scrape: 'true'
+        prometheus.io/path: "/actuator/prometheus"
+        prometheus.io/port: "8082"
     spec:
       containers:
         - name: harness-cv-prom-example
