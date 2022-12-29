@@ -46,3 +46,33 @@ docker push rlachhman/cv-example-app:unstable
 
 ## Deploying to Harness
 Can leverage the `harness-cv-example-deployment.yaml` and `values.yaml` to deploy in Harness to pick the specific `stable` or `unstable` tag. 
+
+## Installing Prometheus 
+Installing Prometheus from Helm is easy.
+
+```
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+
+helm repo update
+
+helm upgrade --install prometheus prometheus-community/prometheus \
+--namespace prometheus --create-namespace
+```
+
+For an example, you can also expose over NodePort.
+
+```
+kubectl expose deployment -n prometheus prometheus-server --type=NodePort --name=prometheus-service
+```
+
+Then browse to node_public_ip:nodeport.
+
+## Metrics
+There are two metrics that can be modified. 
+
+* `CV_Counter_Example_total`
+* `CV_Gauge_Example{}`
+
+In the `stable` version these are flat. In the `un-stable` versions these metrics increment up every 15 seconds. Can modify 
+`src/main/java/io/harness/cv/example/app/GenerateUnstableMetrics.java` and change the amount, time, or add another Actuator Metric
+which will be wired to Prometheus for you. 
