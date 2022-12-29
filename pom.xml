@@ -28,7 +28,6 @@
 		<dependency>
 			<groupId>io.micrometer</groupId>
 			<artifactId>micrometer-registry-prometheus</artifactId>
-			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -40,6 +39,18 @@
     <artifactId>micrometer-core</artifactId>
 </dependency>
 	</dependencies>
+
+<profiles>
+    <profile>
+        <id>actuator</id>
+        <activation>
+            <activeByDefault>true</activeByDefault>
+        </activation>
+        <properties>
+            <spring.profiles.active>actuator</spring.profiles.active>
+        </properties>
+    </profile>
+</profiles>
 
 	<build>
 		<plugins>
