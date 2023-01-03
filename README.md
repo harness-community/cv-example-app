@@ -68,6 +68,16 @@ kubectl expose deployment -n prometheus prometheus-server --type=NodePort --name
 
 Then browse to node_public_ip:nodeport.
 
+e.g
+
+```
+#Node External IP
+kubectl get nodes -o wide
+
+#NodePort for prometheus-service
+kubectl get svc -n prometheus
+```
+
 ## Metrics
 There are two metrics that can be modified. 
 
