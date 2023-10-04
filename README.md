@@ -48,6 +48,9 @@ docker push rlachhman/cv-example-app:unstable
 Can leverage the `harness-cv-example-deployment.yaml` and `values.yaml` to deploy in Harness to pick the specific `stable` or `unstable` tag. The Deployment YAML also creates a LoadBalancer Service. With a public cloud this can be a public IP or using something locally like Minikube can run
 `minikube tunnel` and head to the public IP e.g `kubectl get services`. This is most likely local host or 127.0.0.1:8082] to view the application. 
 
+## Deploying to ECS with Harness
+Can leverage the `ecs_task.json` and `service_definition.json` modified to your AWS resources to deploy to ECS. 
+
 ## Installing Prometheus 
 Installing Prometheus from Helm is easy.
 
