@@ -2,7 +2,7 @@
     "containerDefinitions": [
         {
             "name": "cv-sample-app",
-            "image": "<+artifact.image>",
+            "image": "123456.dkr.ecr.aws-region.amazonaws.com/your-repo:tag",
             "cpu": 0,
             "portMappings": [
                 {
@@ -35,34 +35,11 @@
         }
     ],
     "family": "cv-sample-app",
-    "taskRoleArn": "arn:aws:iam::123456role/ecsInstanceRole",
-    "executionRoleArn": "arn:aws:iam::123456role:role/ecsInstanceRole",
+    "taskRoleArn": "arn:aws:iam::123456:role/ecsInstanceRole",
+    "executionRoleArn": "arn:aws:iam::123456:role/ecsInstanceRole",
     "networkMode": "awsvpc",
-    "revision": 1,
     "volumes": [],
-    "status": "ACTIVE",
-    "requiresAttributes": [
-        {
-            "name": "com.amazonaws.ecs.capability.ecr-auth"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.task-iam-role"
-        },
-        {
-            "name": "ecs.capability.execution-role-ecr-pull"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
-        },
-        {
-            "name": "ecs.capability.task-eni"
-        }
-    ],
     "placementConstraints": [],
-    "compatibilities": [
-        "EC2",
-        "FARGATE"
-    ],
     "requiresCompatibilities": [
         "FARGATE"
     ],
@@ -71,6 +48,5 @@
     "runtimePlatform": {
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
-    },
-    "tags": []
+    }
 }
