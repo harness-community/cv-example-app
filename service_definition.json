@@ -1,6 +1,6 @@
 {
     "launchType": "FARGATE",
-    "serviceName": testapp,
+    "serviceName": cv-app-srv,
     "desiredCount": 1,
     "networkConfiguration": {
         "awsvpcConfiguration": {
