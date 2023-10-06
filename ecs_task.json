@@ -1,65 +1,76 @@
 {
-    "ipcMode": null,
-    "executionRoleArn": "<your ECS Instance Role e.g arn:aws:iam::1234567890:role/ecsInstanceRole>",
     "containerDefinitions": [
         {
-            "dnsSearchDomains": null,
-            "environmentFiles": null,
-            "entryPoint": null,
+            "name": "cv-sample-app",
+            "image": "<+artifact.image>",
+            "cpu": 0,
             "portMappings": [
                 {
-                    "hostPort": 80,
+                    "name": "cv-sample-app-8082-tcp",
+                    "containerPort": 8082,
+                    "hostPort": 8082,
                     "protocol": "tcp",
-                    "containerPort": 80
+                    "appProtocol": "http"
                 }
             ],
-            "command": null,
-            "linuxParameters": null,
-            "cpu": 0,
-            "environment": [],
-            "resourceRequirements": null,
-            "ulimits": null,
-            "dnsServers": null,
-            "mountPoints": [],
-            "workingDirectory": null,
-            "secrets": null,
-            "dockerSecurityOptions": null,
-            "memory": null,
-            "memoryReservation": 384,
-            "volumesFrom": [],
-            "stopTimeout": null,
-            "image": "<+artifact.image>",
-            "startTimeout": null,
-            "firelensConfiguration": null,
-            "dependsOn": null,
-            "disableNetworking": null,
-            "interactive": null,
-            "healthCheck": null,
             "essential": true,
-            "links": null,
-            "hostname": null,
-            "extraHosts": null,
-            "pseudoTerminal": null,
-            "user": null,
-            "readonlyRootFilesystem": null,
-            "dockerLabels": null,
-            "systemControls": null,
-            "privileged": null,
-            "name": "nginx"
+            "environment": [
+                {
+                    "name": "prometheus.io/path",
+                    "value": "/actuator/prometheus"
+                },
+                {
+                    "name": "prometheus.io/port",
+                    "value": "8082"
+                },
+                {
+                    "name": "prometheus.io/scrape",
+                    "value": "true"
+                }
+            ],
+            "environmentFiles": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "ulimits": []
+        }
+    ],
+    "family": "cv-sample-app",
+    "taskRoleArn": "arn:aws:iam::123456role/ecsInstanceRole",
+    "executionRoleArn": "arn:aws:iam::123456role:role/ecsInstanceRole",
+    "networkMode": "awsvpc",
+    "revision": 1,
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
+        },
+        {
+            "name": "ecs.capability.execution-role-ecr-pull"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
         }
     ],
     "placementConstraints": [],
-    "memory": "512",
-    "taskRoleArn": "<your ECS Instance Role e.g arn:aws:iam::1234567890:role/ecsInstanceRole>",
-    "family": "fargate-task-definition",
-    "pidMode": null,
+    "compatibilities": [
+        "EC2",
+        "FARGATE"
+    ],
     "requiresCompatibilities": [
         "FARGATE"
     ],
-    "networkMode": "awsvpc",
-    "runtimePlatform": null,
     "cpu": "256",
-    "inferenceAccelerators": null,
-    "proxyConfiguration": null,
-    "volumes": []
+    "memory": "1024",
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    },
+    "tags": []
 }
